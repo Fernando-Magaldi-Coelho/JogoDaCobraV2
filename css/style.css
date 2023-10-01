@@ -1,0 +1,198 @@
+:root{
+    --preto: #161623;
+
+    --fundo: #191919;
+}
+
+.btn-sair{
+    cursor: pointer;
+}
+
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.modo{
+    display: inline;
+    padding: 10px;
+}
+
+h2 a{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    color: var(--fundo);
+    transition: background-color 0.5s linear;
+}
+
+h2 a:hover{
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: 1px solid;
+}
+
+a h2{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--fundo);
+    background-color: white;
+    text-decoration: none;
+    outline: none;
+    transition: background-color .5s linear;
+}
+
+a h2:hover{
+    color: white;
+    background-color: var(--fundo);
+}
+
+
+.Btn-P2{
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    color: var(--fundo);
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background-color .5s linear;
+    border: 1px solid white;
+}
+
+.Btn-P2:hover{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+
+img{
+    height: 270px;
+    width: 500px;
+    margin: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    outline: none;
+}
+
+body{
+    background-color: var(--fundo);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+canvas{
+    background-color: var(--preto);
+    border: 1px solid gray;
+    object-fit: cover;
+}
+
+.pontos{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+}
+
+.ponto1{
+    margin-top: 1em;
+    right: 6em;
+    position: relative;
+}
+
+
+.valor_pontos{
+    font-weight: 700;
+    font-size: 4.5rem;
+    display: block;
+    margin-top: -10px;
+    position: relative;
+    right: 2em;
+}
+
+
+
+.pontosP2{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.8rem;
+}
+
+.ponto2{
+    margin-top: -5em;
+    left: 6em;
+    position: relative;
+}
+
+.valor_pontosP2{
+    font-weight: 700;
+    font-size: 4.5rem;
+    display: block;
+    margin-top: -10px;
+    position: relative;
+    left: 2.8em;
+}
+
+
+
+.menu{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.gameOver{
+    text-transform: uppercase; /*tudo maiusculo*/
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.pontos_final{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #9BEA4C;
+}
+
+.pontos_finalP2{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #E24DEA;
+}
+
+.btn-play{
+    border-radius: 100px;
+    border: none;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+

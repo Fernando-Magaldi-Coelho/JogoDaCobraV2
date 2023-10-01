@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="assents/img/JsCobra.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Jogo da Cobra</title>
+</head>
+<body>
+    <h1>Bem vindo Ao jogo mais dificil do mundo</h1>
+    
+    <img src="assents/img/JsCobra.png" alt="Jogo da Cobra">
+
+    <a href="modo.html">
+        <h2 class="Play">1 Player</h2>
+    </a>
+
+    <a href="modo.html">
+        <input id="BtnP2" class="Btn-P2" type="submit" value="2 Players">
+    </a>
+    
+
+
+    <br>
+    <a class="btn-sair" id="btn-sair"><h2 class="btn-sair" id="btn-sair">Sair</h2></a>
+
+    <div class="container" style="display: none;">
+    <a href="">
+        <h2 class="modo">Fácil</h2>
+    </a><a href="">
+        <h2 class="modo">Normal</h2>
+    </a><a href="">
+        <h2 class="modo">Dificil</h2>
+    </a>
+</div>
+
+<script>
+
+const Sair = document.getElementById('btn-sair');
+
+Sair.addEventListener('click', () => {
+    const confirmarSaida = confirm('Deseja realmente sair do jogo?');
+
+    if (confirmarSaida) {
+        window.close(); // Fecha a guia se o usuário confirmar
+    }
+});
+
+
+
+</script>
+    
+</body>
+</html>
