@@ -355,6 +355,8 @@ const Batida = () => {
         GameOver();
         directionP2 = undefined;
 
+        gameOver.innerText = "Os dois são ruins demais"
+
         // Verifique se o áudio ainda não foi reproduzido
         if (!audioReproduzido) {
             perdeu.play();
