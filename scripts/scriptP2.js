@@ -80,8 +80,8 @@ const randomColor = () => {
 
 
 let comida = {
-    x : randomPosition(0, 570), 
-    y: randomPosition(0, 570),
+    x : randomPosition(0, 870), 
+    y: randomPosition(0, 870),
     color: randomColor()
 }
 
@@ -247,8 +247,8 @@ const CheckComeu = () => {
         cobra.push(head)
         coin.play()
 
-        // comida.x = randomPosition(0, 570), 
-        // comida.y= randomPosition(0, 570),
+        // comida.x = randomPosition(0, 870), 
+        // comida.y= randomPosition(0, 870),
         // comida.color= randomColor()
 
         let x = randomPosition()
@@ -276,8 +276,8 @@ const CheckComeuP2 = () => {
         cobraP2.push(head)
         coin.play()
 
-        // comida.x = randomPosition(0, 570), 
-        // comida.y= randomPosition(0, 570),
+        // comida.x = randomPosition(0, 870), 
+        // comida.y= randomPosition(0, 870),
         // comida.color= randomColor()
 
         let x = randomPosition()
@@ -612,8 +612,8 @@ BtnPlay.addEventListener('click', () => {
 ]
 
 comida = {
-    x : randomPosition(0, 570), 
-    y: randomPosition(0, 570),
+    x : randomPosition(0, 870), 
+    y: randomPosition(0, 870),
     color: randomColor()
 }
 
