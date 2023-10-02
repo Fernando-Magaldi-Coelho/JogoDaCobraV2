@@ -127,17 +127,18 @@ canvas{
     display: block;
     margin-top: -10px;
     position: relative;
+    right: 2em;
 }
 
 
 
-/* .pontosP2{
+.pontosP2{
     display: flex;
     flex-direction: column;
     font-size: 1.8rem;
-} */
+}
 
-/* .ponto2{
+.ponto2{
     margin-top: -5em;
     left: 6em;
     position: relative;
@@ -150,7 +151,7 @@ canvas{
     margin-top: -10px;
     position: relative;
     left: 2.8em;
-} */
+}
 
 
 
@@ -174,11 +175,11 @@ canvas{
     color: #9BEA4C;
 }
 
-/* .pontos_finalP2{
+.pontos_finalP2{
     font-weight: 700;
     font-size: 1.5rem;
     color: #E24DEA;
-} */
+}
 
 .btn-play{
     border-radius: 100px;

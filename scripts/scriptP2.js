@@ -42,11 +42,11 @@ let cobra = [ //Onde essa array vai estar posicionada
     { x: 330, y:240 }
 ];
 
-// let cobraP2 = [
-//     { x: 270, y: 90 },
-//     { x: 300, y: 90 },
-//     { x: 330, y: 90 }
-// ];
+let cobraP2 = [
+    { x: 270, y: 90 },
+    { x: 300, y: 90 },
+    { x: 330, y: 90 }
+];
 
 const MostrarPontos = () =>{
     pontos.innerText = parseInt(pontos.innerText) + 10 //Faz a operação matemática OU PODE FAZER  +pontos.innerText + 10
@@ -57,6 +57,7 @@ const MostrarPontos = () =>{
 const MostrarPontosP2 = () =>{
     pontosP2.innerText = parseInt(pontosP2.innerText) + 10 //Faz a operação matemática OU PODE FAZER  +pontos.innerText + 10
 }
+
 
 
 const randomNumber = (max, min) => {
@@ -307,6 +308,8 @@ const CheckCollision = () => {
 
     if (Parede || suicidio){
         GameOver();
+
+        gameOver.innerText = "P1 MORREU RUIM";
         
         // Verifique se o áudio ainda não foi reproduzido
         if (!audioReproduzido) {
@@ -332,6 +335,8 @@ const CheckCollisionP2 = () => {
     if (Parede || suicidio){
         GameOver();
         directionP2 = undefined
+
+        gameOver.innerText = "P2 MORREU ESPERAVA MAIS";
         
         // Verifique se o áudio ainda não foi reproduzido
         if (!audioReproduzido) {
@@ -415,7 +420,7 @@ const GameOver = () =>{
     
     
     menu.style.display = "flex"
-    // PontosFinalP2.innerText = pontosP2.innerText
+    PontosFinalP2.innerText = pontosP2.innerText
     PontosFinal.innerText = pontos.innerText
     canvas.style.filter = "blur(2px)"
 
@@ -478,12 +483,12 @@ const gameLoop = () => {
 
     //Player 2
 
-    // DrawCobraP2()
-    // moveCobraP2()
-    // CheckComeuP2()
-    // CheckCollisionP2()
-    // Batida()
-    // Kill()
+    DrawCobraP2()
+    moveCobraP2()
+    CheckComeuP2()
+    CheckCollisionP2()
+    Batida()
+    Kill()
 
     
 
@@ -519,23 +524,23 @@ let mover = document.addEventListener('keydown', ({key}) => {
     
 })
 
-// let moverP2 = document.addEventListener('keydown', ({ key }) => {
-//     if ((key === "D" || key === "d") && directionP2 !== "A" && directionP2 !== "a") {
-//         directionP2 = "D";
-//     }
+let moverP2 = document.addEventListener('keydown', ({ key }) => {
+    if ((key === "D" || key === "d") && directionP2 !== "A" && directionP2 !== "a") {
+        directionP2 = "D";
+    }
 
-//     if ((key === "A" || key === "a") && directionP2 !== "D" && directionP2 !== "d") {
-//         directionP2 = "A";
-//     }
+    if ((key === "A" || key === "a") && directionP2 !== "D" && directionP2 !== "d") {
+        directionP2 = "A";
+    }
 
-//     if ((key === "W" || key === "w") && directionP2 !== "S" && directionP2 !== "s") {
-//         directionP2 = "W";
-//     }
+    if ((key === "W" || key === "w") && directionP2 !== "S" && directionP2 !== "s") {
+        directionP2 = "W";
+    }
 
-//     if ((key === "S" || key === "s") && directionP2 !== "W" && directionP2 !== "w") {
-//         directionP2 = "S";
-//     }
-// });
+    if ((key === "S" || key === "s") && directionP2 !== "W" && directionP2 !== "w") {
+        directionP2 = "S";
+    }
+});
 
 
 
@@ -548,7 +553,7 @@ BtnPlay.addEventListener('click', () => {
 
 
     pontos.innerText = "00"
-    // pontosP2.innerText = "00"
+    pontosP2.innerText = "00"
     menu.style.display = "none"
     canvas.style.filter = "none"
     
@@ -572,23 +577,23 @@ BtnPlay.addEventListener('click', () => {
         }
     })
 
-    // moverP2 = document.addEventListener('keydown', ({ key }) => {
-    //     if ((key === "D" || key === "d") && directionP2 !== "A" && directionP2 !== "a") {
-    //         directionP2 = "D";
-    //     }
+    moverP2 = document.addEventListener('keydown', ({ key }) => {
+        if ((key === "D" || key === "d") && directionP2 !== "A" && directionP2 !== "a") {
+            directionP2 = "D";
+        }
     
-    //     if ((key === "A" || key === "a") && directionP2 !== "D" && directionP2 !== "d") {
-    //         directionP2 = "A";
-    //     }
+        if ((key === "A" || key === "a") && directionP2 !== "D" && directionP2 !== "d") {
+            directionP2 = "A";
+        }
     
-    //     if ((key === "W" || key === "w") && directionP2 !== "S" && directionP2 !== "s") {
-    //         directionP2 = "W";
-    //     }
+        if ((key === "W" || key === "w") && directionP2 !== "S" && directionP2 !== "s") {
+            directionP2 = "W";
+        }
     
-    //     if ((key === "S" || key === "s") && directionP2 !== "W" && directionP2 !== "w") {
-    //         directionP2 = "S";
-    //     }
-    // });
+        if ((key === "S" || key === "s") && directionP2 !== "W" && directionP2 !== "w") {
+            directionP2 = "S";
+        }
+    });
     
 
 
@@ -598,11 +603,11 @@ BtnPlay.addEventListener('click', () => {
     { x: 330, y:240 }
 ]
 
-//     cobraP2 = [
-//     { x: 270, y: 90 },
-//     { x: 300, y: 90 },
-//     { x: 330, y: 90 }
-// ]
+    cobraP2 = [
+    { x: 270, y: 90 },
+    { x: 300, y: 90 },
+    { x: 330, y: 90 }
+]
 
 comida = {
     x : randomPosition(0, 570), 
