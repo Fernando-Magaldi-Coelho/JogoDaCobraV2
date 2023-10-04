@@ -19,6 +19,12 @@ cabecaImage.src = './assents/img/cabeca.jpg'
 const cabecaImageP2 = new Image()
 cabecaImageP2.src = './assents/img/cabecaP2.jpg'
 
+document.addEventListener('keydown', (event) => {
+    if (menu.style.display == "flex" && (event.key === "Enter" || event.key === " ")) { //Se a pessoa apertar enter ou espaço quando o menu estiver esposto ela reinicia chamando a função 
+        reiniciarJogo()
+        
+    }})
+
 
 
 function getDificuldadeFromURL() {
@@ -542,8 +548,7 @@ let mover = document.addEventListener('keydown', ({key}) => {
 // });
 
 
-
-BtnPlay.addEventListener('click', () => {
+const reiniciarJogo = () => {
     perdeu.pause()
     perdeu.currentTime = 0 //Faz o audio reiniciar
     
@@ -614,6 +619,11 @@ comida = {
     color: randomColor()
 }
 
+}
+
+
+BtnPlay.addEventListener('click', () => {
+reiniciarJogo()
 })
 
 
