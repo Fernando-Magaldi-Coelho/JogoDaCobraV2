@@ -1,4 +1,15 @@
 
+// document.addEventListener('mousedown', function (evento_no_console){
+//     console.log(evento_no_console)
+// })
+
+// document.addEventListener('mousemove', function (evento_no_console_2){
+//     console.log(evento_no_console_2)
+// })
+
+// document.addEventListener('keydown', function (evento_no_console_3){
+//     console.log(evento_no_console_3)
+// })
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext("2d"); //contexto
@@ -18,6 +29,13 @@ const cabecaImage = new Image();
 cabecaImage.src = './assents/img/cabeca.jpg'
 const cabecaImageP2 = new Image()
 cabecaImageP2.src = './assents/img/cabecaP2.jpg'
+
+
+document.addEventListener('keydown', (event) => {
+    if (menu.style.display == "flex" && (event.key === "Enter" || event.key === " ")) { //Se a pessoa apertar enter ou espaço quando o menu estiver esposto ela reinicia chamando a função 
+        reiniciarJogo()
+    }})
+
 
 
 
@@ -492,6 +510,7 @@ const gameLoop = () => {
     CheckCollisionP2()
     Batida()
     Kill()
+    
 
     
 
@@ -546,78 +565,73 @@ let moverP2 = document.addEventListener('keydown', ({ key }) => {
 });
 
 
+// Defina a função reiniciarJogo fora do evento BtnPlay.addEventListener
+const reiniciarJogo = () => {
 
-BtnPlay.addEventListener('click', () => {
-    perdeu.pause()
-    perdeu.currentTime = 0 //Faz o audio reiniciar
-    
-    Start.play()
-    
+    perdeu.pause(); //pausa o jogo
+    perdeu.currentTime = 0; // Faz o áudio reiniciar
+    Start.play(); //inicia o audio start
 
+    pontos.innerText = "00"; //defina de volta os pontos
+    pontosP2.innerText = "00";
+    menu.style.display = "none";
+    canvas.style.filter = "none"; //tira o filtro
 
-    pontos.innerText = "00"
-    pontosP2.innerText = "00"
-    menu.style.display = "none"
-    canvas.style.filter = "none"
-    
-
-
-    mover = document.addEventListener('keydown', ({key}) => {
-        if(key == "ArrowRight" && direction != "left"){
+    mover = document.addEventListener('keydown', ({ key }) => {
+        if (key == "ArrowRight" && direction != "left") {
             direction = "right";
         }
-    
-        if(key == "ArrowLeft" && direction != "right"){
+
+        if (key == "ArrowLeft" && direction != "right") {
             direction = "left";
         }
-    
-        if(key == "ArrowUp" && direction != "down"){
+
+        if (key == "ArrowUp" && direction != "down") {
             direction = "up";
         }
-    
-        if(key == "ArrowDown" && direction != "up"){
+
+        if (key == "ArrowDown" && direction != "up") {
             direction = "down";
         }
-    })
+    });
 
     moverP2 = document.addEventListener('keydown', ({ key }) => {
         if ((key === "D" || key === "d") && directionP2 !== "A" && directionP2 !== "a") {
             directionP2 = "D";
         }
-    
+
         if ((key === "A" || key === "a") && directionP2 !== "D" && directionP2 !== "d") {
             directionP2 = "A";
         }
-    
+
         if ((key === "W" || key === "w") && directionP2 !== "S" && directionP2 !== "s") {
             directionP2 = "W";
         }
-    
+
         if ((key === "S" || key === "s") && directionP2 !== "W" && directionP2 !== "w") {
             directionP2 = "S";
         }
     });
-    
 
-
-    cobra = [ //Onde essa array vai estar posicionada 
-    { x: 270, y:240 },
-    { x: 300, y:240 },
-    { x: 330, y:240 }
-]
+    cobra = [ // Onde essa array vai estar posicionada 
+        { x: 270, y: 240 },
+        { x: 300, y: 240 },
+        { x: 330, y: 240 }
+    ];
 
     cobraP2 = [
-    { x: 270, y: 90 },
-    { x: 300, y: 90 },
-    { x: 330, y: 90 }
-]
+        { x: 270, y: 90 },
+        { x: 300, y: 90 },
+        { x: 330, y: 90 }
+    ];
 
-comida = {
-    x : randomPosition(0, 870), 
-    y: randomPosition(0, 870),
-    color: randomColor()
-}
+    comida = {
+        x: randomPosition(0, 870),
+        y: randomPosition(0, 870),
+        color: randomColor()
+    };
+};
 
-})
-
-
+BtnPlay.addEventListener('click', () => {
+    reiniciarJogo() // Chame a função de reinicialização ao clicar no botão Play
+});

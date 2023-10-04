@@ -359,43 +359,47 @@ const Batida = () => {
 }
 
 const Kill = () => {
-    const headP1 = cobra[cobra.length - 1];
-    const headP2 = cobraP2[cobraP2.length - 1];
+    const headP1 = cobra[cobra.length - 1]; // Obtém a posição da cabeça da cobra do jogador 1
+    const headP2 = cobraP2[cobraP2.length - 1]; // Obtém a posição da cabeça da cobra do jogador 2
 
+    // Percorre sobre todas as partes da cobra do jogador 1, exceto a cabeça
     for (let i = 0; i < cobra.length - 1; i++) {
+        // Percorre sobre todas as partes da cobra do jogador 2, exceto a cabeça
         for (let j = 0; j < cobraP2.length - 1; j++) {
+            // Verifica se a cabeça do jogador 1 colidiu com qualquer parte da cobra do jogador 2
             if (headP1.x === cobraP2[j].x && headP1.y === cobraP2[j].y) {
                 // Colisão detectada, ambas as cobras morrem
-                GameOver();
-                
-                direction = undefined;
-                directionP2 = undefined;
-                gameOver.innerText = "P1 MORREU LIXO";
+                GameOver(); // Chama a função GameOver para encerrar o jogo
 
-                // Verifique se o áudio ainda não foi reproduzido
+                direction = undefined; // Reseta a direção do jogador 1 para evitar movimento
+                directionP2 = undefined; // Reseta a direção do jogador 2 para evitar movimento
+                gameOver.innerText = "P1 MORREU LIXO"; // Define uma mensagem de game over
+
+                // Verifica se o áudio ainda não foi reproduzido
                 if (!audioReproduzido) {
-                    perdeu.play();
-                    audioReproduzido = true; // Defina a variável de controle como true para evitar a reprodução repetida
+                    perdeu.play(); // Toca um som de derrota
+                    audioReproduzido = true; // Define a variável de controle como true para evitar a reprodução repetida
                 }
-                return;
+                return // Sai da função, pois já houve uma colisão
             } else if (headP2.x === cobra[i].x && headP2.y === cobra[i].y) {
                 // Colisão detectada, ambas as cobras morrem
-                GameOver();
-                
-                direction = undefined;
-                directionP2 = undefined;
-                gameOver.innerText = "P2 MORREU TROUXA";
+                GameOver(); // Chama a função GameOver para encerrar o jogo
+
+                direction = undefined; // Reseta a direção do jogador 1 para evitar movimento
+                directionP2 = undefined; // Reseta a direção do jogador 2 para evitar movimento
+                gameOver.innerText = "P2 MORREU TROUXA"; // Define uma mensagem de game over
 
                 // Verifique se o áudio ainda não foi reproduzido
                 if (!audioReproduzido) {
-                    perdeu.play();
-                    audioReproduzido = true; // Defina a variável de controle como true para evitar a reprodução repetida
+                    perdeu.play(); // Toca um som de derrota
+                    audioReproduzido = true; // Define a variável de controle como true para evitar a reprodução repetida
                 }
-                return;
+                return; // Sai da função, pois já houve uma colisão
             }
         }
     }
 }
+
 
 
 
